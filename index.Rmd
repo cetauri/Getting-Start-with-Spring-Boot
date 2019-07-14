@@ -10,17 +10,6 @@ output:
 
 # 스프링 부트 시작하기
 
-```{Java}
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-}
-```
 
 ## Introducing Spring Boot
 
@@ -61,3 +50,33 @@ public class Application {
 ## Using the “default” Package
 
 https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/htmlsingle/#using-boot-using-the-default-package
+
+
+# Dependency Management
+## Spring Boot가 관리해주는 읜존성 추가
+```{xml}
+ <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+## Spring Boot가 관리해주는 읜존성 변경
+spring-boot-dependencies.pom 에 이미 정의 되어 있는 버젼을 변경하려면 pom 파일의 properties를 재 정의한다.
+```{xml}
+<properties>
+  <spring.version>5.0.13.RELEASE</spring.version>
+</properties>
+```
+
+## Spring Boot가 관리 안 해주는 읜존성 추가
+POM 파일에 버전까지 명시 후 추가한다 
+```{xml}
+ <dependency>
+      <groupId>org.modelmapper</groupId>
+      <artifactId>modelmapper</artifactId>
+      <version>2.3.3</version>
+  </dependency>
+```
+
+
+## ㅇㅡㅣㅣㅣ
